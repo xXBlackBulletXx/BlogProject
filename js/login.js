@@ -8,7 +8,8 @@ $(document).ready(function(){
 		.done(function( data ) {
 			$jsonParse = JSON.parse(data);
 			if ($jsonParse==true) {
-				window.location.href = "Miao.html";
+				window.location.href = "gestionale.html";
+				sessionStorage.setItem("username", $("#username").val());
 			}else{
 				alert("Username o password errati");
 			}
