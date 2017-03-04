@@ -1,0 +1,170 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url(fonts/JosefinSans/JosefinSans-light.ttf);
+  font-weight: bold;
+}
+
+body{
+	font-family: myFirstFont;
+	margin: 0px;
+
+	background-color: #eee;
+
+	-webkit-user-select: none; /* Chrome/Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+
+	/* Rules below not implemented in browsers yet */
+	-o-user-select: none;
+	user-select: none;
+}
+
+/* unvisited link */
+a:link {
+    color: black;
+}
+
+/* visited link */
+a:visited {
+    color: black;
+}
+
+/* mouse over link */
+a:hover {
+    color: black;
+}
+
+/* selected link */
+a:active {
+    color: black;
+}
+
+a:-webkit-any-link {
+	text-decoration: none;
+}
+
+.navbar{
+	text-align: center;
+}
+
+#title{
+	text-align: center;
+	margin: 10px;
+	font-size: 54px;
+	font-weight: 1200;
+	margin-top: 32px;
+}
+
+.menu ul{
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	border-bottom: 1px solid black;
+	padding-bottom: 5px;
+	display: inline;
+}
+
+.menu ul li{
+	display: inline;
+	margin-left: 6px;
+	margin-right: 6px;
+	font-size: 18px;
+	border-bottom: 1px solid rgba(255,0,0,0);
+	outline: none;
+	transition: border-bottom 1s;
+}
+
+.menu ul li:hover{
+    border-bottom: 1px solid black;
+}
+
+footer{
+	background-color: #424242;
+	height: auto;
+	width: 100%;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+footer .share{
+	color: white;
+	padding: 28px;
+	font-size: 26px;
+	margin: 0px;
+	max-width: 20%;
+	display: inline-table;
+	margin-left: 18px;
+}
+
+footer .share p{
+	margin: 0px !important;
+}
+
+footer .share ul, footer .channels ul{
+	list-style: none;
+	margin-top: 5px !important;
+	padding: 0px;
+	padding-left: 16px;
+}
+
+footer .share ul li, footer .channels ul li{
+	display: inline;
+	margin-left: 3px;
+}
+
+footer .share ul li div:hover, footer .channels ul li div:hover{
+    background-color: #bdbdbd;
+    box-shadow: 5px 9px 32px -3px #000;
+}
+
+footer .share ul li div, footer .channels ul li div{
+	background-color: #757575;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 5px 6px 32px -3px #000;
+    transition: background-color 1s, box-shadow 0.1s;
+}
+
+footer .share ul li div i, footer .channels ul li div i{
+	margin-top: 8px;
+	font-size: 16px;
+}
+
+/* unvisited link */
+.share a:link, .channels a:link{
+    color: white;
+}
+
+/* visited link */
+.share a:visited, .channels a:visited{
+    color: white;
+}
+
+/* mouse over link */
+.share a:hover, .channels a:hover{
+    color: white;
+}
+
+/* selected link */
+.share a:active, .channels a:active{
+    color: white;
+}
+
+footer .channels{
+	display: inline-block;
+	color: white;
+	float: right;
+	font-size: 26px;
+	padding: 28px;
+	margin-right: 64px;
+}
+
+footer .channels p{
+	margin: 0px;
+	padding: 0px;
+}
