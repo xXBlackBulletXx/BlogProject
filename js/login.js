@@ -6,7 +6,12 @@ $(document).ready(function(){
 			data: { username: $("#username").val(), pasw: $("#password").val() }
 		})
 		.done(function( data ) {
-			alert( "Data Saved: " + JSON.parse(data) );
+			$jsonParse = JSON.parse(data);
+			if ($jsonParse==true) {
+				window.location.href = "Miao.html";
+			}else{
+				alert("Username o password errati");
+			}
 		});
 	});
 });
