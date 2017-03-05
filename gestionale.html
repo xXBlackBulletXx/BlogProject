@@ -2,6 +2,8 @@
 	<head>
 		<title>Emmedimakoto Blog</title>
 
+		<meta name="viewport" content="width=device-width">
+
 		<script type="text/javascript" src="bower_components/jquery-3.1.1.min.js"></script>
 		<script type="text/javascript" src="js/gestionale.js"></script>
 
@@ -40,23 +42,39 @@
 		
 		<div class="body">
 			<header>
-				<center>
+					<i class="fa fa-bars"></i>
 					<p>General</p>
-				</center>
 			</header>
 			
 			<main>
-				<div class="addPost">
-					<i class="fa fa-plus" aria-hidden="true"></i>
-					<p>Aggiungi post</p>
+				<div class="dati">
+					<div class="addPost">
+						<i class="fa fa-plus" aria-hidden="true"></i>
+						<p>Aggiungi post</p>
+					</div>
+					<div class="shared">
+						<i class="fa fa-retweet" aria-hidden="true"></i>
+						<p>12000</p>
+					</div>
+					<div class="visite">
+						<i class="fa fa-eye" aria-hidden="true"></i>
+						<p>32000</p>
+					</div>
 				</div>
-				<div class="shared">
-					<i class="fa fa-retweet" aria-hidden="true"></i>
-					<p>12000</p>
-				</div>
-				<div class="visite">
-					<i class="fa fa-eye" aria-hidden="true"></i>
-					<p>32000</p>
+				<div class="visual">
+					<table id="visualTable">
+						<thead>
+							<tr>
+								<td>ID</td>
+								<td>Data</td>
+								<td>Titolo</td>
+								<td>Azioni</td>
+							</tr>
+						</thead>
+						<tbody id="data">
+						</tbody>
+					</table>
+					<p id="statusVisual">Caricando i dati...</p>
 				</div>
 			</main>
 
@@ -64,5 +82,19 @@
 				
 			</footer>
 		</div>
+
+		<dialog id="dialogElimin">
+			<p>Vuoi cancellare questo post?</p>
+			<button id="OK">CONFERMA</button>
+			<button id="CANCEL">CANCELLA</button>
+		</dialog>
+
+		<dialog id="dialogOK">
+			<p>Azione svolta con successo.</p>
+		</dialog>
+
+		<dialog id="dialogError">
+			<p>Ops, si e' verificato un'errore durante l'azione! Riprovare.</p>
+		</dialog>
 	</body>
 </html>

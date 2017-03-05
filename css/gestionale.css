@@ -14,6 +14,7 @@ body{
 	margin: 0px;
 	overflow-y: none !important;
 	overflow-x: none !important;
+	text-decoration: none;
 
 	background-color: #eee;
 
@@ -48,6 +49,15 @@ a:active {
 
 a:-webkit-any-link {
 	text-decoration: none;
+}
+
+.body header p{
+	margin-left: -20px;
+}
+
+.body header .fa-bars{
+	float: left;
+	margin: 30px;
 }
 
 .panel{
@@ -270,7 +280,8 @@ main ul li .badge{
 .body main .addPost, .body main .visite, .body main .shared{
 	display: inline-table;
 	float: left;
-	width: 340px;
+	min-width: 20%;
+	max-width: 20%;
 	margin: 20px;
 	background-color: #eee;
 	border-radius: 20px;
@@ -290,6 +301,14 @@ main ul li .badge{
 	margin: 0px;
 	padding: 0px;
 	font-size: 28px;
+	outline: none;
+}
+
+.body main .addPost{
+	margin-right: 50px;
+	margin-bottom: 46px;
+	padding: 54px;
+	margin-left: 18% !important;
 }
 
 .body main .addPost:hover{
@@ -300,9 +319,11 @@ main ul li .badge{
 
 .body main .visite{
 	display: inline-table;
-	float: right;
-	margin-right: 50px;
-	width: 120px;
+	float: left;
+	margin-right: 20px;
+	min-width: 120px;
+	padding: 46px;
+	margin-bottom: 46px;
 }
 
 .body main .visite:hover{
@@ -312,12 +333,151 @@ main ul li .badge{
 }
 
 .body main .shared{
-	width: 180px;
-	margin-left: 100px;
+	min-width: 120px;
+	float: left;
+	margin-right: 50px;
+	padding: 46px;
+	margin-bottom: 46px;
 }
 
 .body main .shared:hover{
 	background-color: #9c27b0;
 	color: white;
 	box-shadow: 0px 15px 67px 0px black;
+}
+
+.visual{
+	width: 100%;
+}
+
+.dati{
+	margin-bottom: 40px;
+}
+
+table{
+	text-align: center;
+	width: 95%;
+}
+
+table thead tr td, table tbody tr td{
+	border-right: 1px solid black;
+	padding: 5px;
+	margin: 0px;
+	transition: background-color 1s;
+}
+
+table tbody tr td{
+	border-right: 0px;
+}
+
+table tbody tr{
+	transition: background-color 1s;
+}
+
+table thead tr td:hover, table tbody tr:hover{
+	background-color: #eee;
+}
+
+table tbody tr td ul{
+	background-color: rgba(255,255,255,0) !important;
+	margin: 0px;
+	padding: 0px;
+}
+
+table tbody tr td ul li{
+	background-color: rgba(255,255,255,0) !important;
+	margin: 0px;
+	padding: 0px;
+}
+
+table tbody tr td ul li i{
+	font-size: 24px !important;
+	margin-left: 6px;
+	margin-right: 6px;
+	float: none;
+}
+
+@media only screen and (max-width: 1400px) {
+	.body main .dati .addPost{
+		margin-left: 1% !important;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.body main .dati .addPost{
+		margin-left: 8% !important;
+		min-width: 43%;
+	}
+
+	.body{
+		width: 100%;
+		left: 0;
+	}
+
+	.body main .dati .shared, .body main .dati .visite{
+		display: none;
+	}
+
+	.panel{
+		display: none !important;
+	}
+
+	table{
+		width: 100%;
+	}
+
+	.visual{
+		margin-left: -30px;
+		width: 120%;
+	}
+}
+
+dialog{
+	box-shadow: 0px 0px 0px 80000px rgba(0,0,0,0.8);
+	position: fixed;
+	font-size: 32px;
+	margin-top: 17%;
+	border-radius: 7px;
+	border: 0px;
+	text-align: center;
+}
+
+dialog p{
+	margin: 20px;
+	padding: 0px;
+}
+
+dialog button{
+	padding: 15px;
+	border: 0px;
+	font-size: 14px;
+	outline: none;
+	border-radius: 5px;
+	background-color: #fff !important;
+	transition: background-color 1s;
+}
+
+dialog #OK:hover{
+	background-color: #43a047 !important;
+	color: white;
+}
+
+dialog #OK:active{
+	background-color: #1b5e20 !important;
+	color: white;
+}
+
+dialog #CANCEL:hover{
+	background-color: #e53935 !important;
+	color: white;
+}
+
+dialog #CANCEL:active{
+	background-color: #b71c1c !important;
+	color: white;
+}
+
+#statusVisual{
+	text-align: center;
+	font-size: 32px;
 }
