@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	if(sessionStorage.getItem("username") != null){
 		$("#usr").html(sessionStorage.getItem("username"));
-
+		//POST FRAGMENT
 		$id = -1;
 
 		$.ajax({
@@ -70,6 +70,15 @@ $(document).ready(function(){
 
 		$("dialog #CANCEL").click(function(){
 			$("#dialogElimin").fadeOut("1000", "linear");
+		});
+
+
+		//NEW POST FRAGMENT
+		$(".newPost main .tools ul i").click(function(){
+			$action = event.target.id;
+			if ($action.indexOf("btnBold")>=0) {
+				document.getElementById("descrizioneTxt").innerHTML += " <bold> ";
+			}
 		});
 
 	}else{

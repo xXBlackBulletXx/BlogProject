@@ -51,16 +51,18 @@ a:-webkit-any-link {
 	text-decoration: none;
 }
 
-.body header p{
+/* POST FRAGMENT */
+
+.post .body header p{
 	margin-left: -20px;
 }
 
-.body header .fa-bars{
+.post .body header .fa-bars{
 	float: left;
 	margin: 30px;
 }
 
-.panel{
+.post .panel{
 	display: block !important;
 	float: left;
 	width: 380px;
@@ -73,12 +75,13 @@ a:-webkit-any-link {
 	max-width: 380px;
 }
 
-.body{
+.post .body{
 	float: right;
+	display: none !important;
 	overflow-y: none;
 }
 
-.panel #title{
+.post .panel #title{
 	margin: 0px;
 	color: white;
 	padding-top: 20px;
@@ -138,24 +141,24 @@ a:-webkit-any-link {
     100% {background-color: black;}
 }
 
-.utente{
+.post .utente{
 	padding: 16px;
 	font-size: 64px;
 }
 
-.utente .fa{
+.post .utente .fa{
 	float: left;
 	font-size: 92px;
 }
 
-.utente #usr{
+.post .utente #usr{
 	margin-top: 15px;
 	display: -webkit-inline-box !important;
 	font-size: 34px !important;
 	display: inline;text-align: left !important;
 }
 
-.utente p{
+.post .utente p{
 	font-size: 18px;
 	margin: 4px;
 }
@@ -182,7 +185,7 @@ a:-webkit-any-link {
 	border-radius:20px;
 }
 
-.footer{
+.post .footer{
 	position: absolute !important;
 	bottom: 0;
 	left: 0;
@@ -191,7 +194,7 @@ a:-webkit-any-link {
 	height: 58px !important;
 }
 
-.footer ul{
+.post .footer ul{
 	list-style: none;
 	padding-left: 20px;
 	padding-right: 20px;
@@ -199,38 +202,38 @@ a:-webkit-any-link {
     margin-top: 14px;
 }
 
-.footer ul li{
+.post .footer ul li{
 	display: inline-table;
 	margin-left: 12px;
 	margin-right: 12px;
 }
 
-main ul{
+.post main ul{
 	list-style: none;
 	font-size: 32px;
 	padding: 0;
 }
 
-main ul li{
+.post main ul li{
 	background-color: #fff;
 	transition: background-color 1s;
 	padding: 10px;
 }
 
-main ul li:hover{
+.post main ul li:hover{
 	background-color: #eee;
 }
 
-main ul li:active{
+.post main ul li:active{
 	background-color: #bdbdbd;
 }
 
-main ul li i{
+.post main ul li i{
 	float: left;
 	margin-top: 3px;
 }
 
-main ul li .badge{
+.post main ul li .badge{
 	display: inline-table;
     position: absolute;
     height: 24px;
@@ -248,7 +251,7 @@ main ul li .badge{
 
 /*MAIN FRAME*/
 
-.body{
+.post .body{
 	width: 81%;
     height: 100%;
     top: 0;
@@ -260,7 +263,7 @@ main ul li .badge{
     overflow-y: scroll;
 }
 
-.body header{
+.post .body header{
 	width: 100%;
 	margin: 0px;
 	padding: 0px;
@@ -268,16 +271,16 @@ main ul li .badge{
 	font-size: 48px;
 }
 
-.body header p{
+.post .body header p{
 	margin: 0;
 	padding: 24;
 }
 
-.body main{
+.post .body main{
 	padding: 50px;
 }
 
-.body main .addPost, .body main .visite, .body main .shared{
+.post .body main .addPost, .post .body main .visite, .post  .body main .shared{
 	display: inline-table;
 	float: left;
 	min-width: 20%;
@@ -293,31 +296,31 @@ main ul li .badge{
 	cursor: pointer;
 }
 
-.body main .addPost i{
+.post .body main .addPost i{
 	margin-top: -20px;
 }
 
-.body main .addPost p, .body main .visite p, .body main .shared p{
+.post .body main .addPost p, .post .body main .visite p, .post .body main .shared p{
 	margin: 0px;
 	padding: 0px;
 	font-size: 28px;
 	outline: none;
 }
 
-.body main .addPost{
+.post .body main .addPost{
 	margin-right: 50px;
 	margin-bottom: 46px;
 	padding: 54px;
 	margin-left: 18% !important;
 }
 
-.body main .addPost:hover{
+.post .body main .addPost:hover{
 	background-color: #00bcd4;
 	color: white;
 	box-shadow: 0px 15px 67px 0px black;
 }
 
-.body main .visite{
+.post .body main .visite{
 	display: inline-table;
 	float: left;
 	margin-right: 20px;
@@ -326,13 +329,13 @@ main ul li .badge{
 	margin-bottom: 46px;
 }
 
-.body main .visite:hover{
+.post .body main .visite:hover{
 	background-color: #ff9800;
 	color: white;
 	box-shadow: 0px 15px 67px 0px black;
 }
 
-.body main .shared{
+.post .body main .shared{
 	min-width: 120px;
 	float: left;
 	margin-right: 50px;
@@ -340,96 +343,61 @@ main ul li .badge{
 	margin-bottom: 46px;
 }
 
-.body main .shared:hover{
+.post .body main .shared:hover{
 	background-color: #9c27b0;
 	color: white;
 	box-shadow: 0px 15px 67px 0px black;
 }
 
-.visual{
+.post .visual{
 	width: 100%;
 }
 
-.dati{
+.post .dati{
 	margin-bottom: 40px;
 }
 
-table{
+.post table{
 	text-align: center;
 	width: 95%;
 }
 
-table thead tr td, table tbody tr td{
+.post table thead tr td, table tbody tr td{
 	border-right: 1px solid black;
 	padding: 5px;
 	margin: 0px;
 	transition: background-color 1s;
 }
 
-table tbody tr td{
+.post table tbody tr td{
 	border-right: 0px;
 }
 
-table tbody tr{
+.post table tbody tr{
 	transition: background-color 1s;
 }
 
-table thead tr td:hover, table tbody tr:hover{
+.post table thead tr td:hover, .post table tbody tr:hover{
 	background-color: #eee;
 }
 
-table tbody tr td ul{
+.post table tbody tr td ul{
 	background-color: rgba(255,255,255,0) !important;
 	margin: 0px;
 	padding: 0px;
 }
 
-table tbody tr td ul li{
+.post table tbody tr td ul li{
 	background-color: rgba(255,255,255,0) !important;
 	margin: 0px;
 	padding: 0px;
 }
 
-table tbody tr td ul li i{
+.post table tbody tr td ul li i{
 	font-size: 24px !important;
 	margin-left: 6px;
 	margin-right: 6px;
 	float: none;
-}
-
-@media only screen and (max-width: 1400px) {
-	.body main .dati .addPost{
-		margin-left: 1% !important;
-	}
-}
-
-@media only screen and (max-width: 500px) {
-	.body main .dati .addPost{
-		margin-left: 8% !important;
-		min-width: 43%;
-	}
-
-	.body{
-		width: 100%;
-		left: 0;
-	}
-
-	.body main .dati .shared, .body main .dati .visite{
-		display: none;
-	}
-
-	.panel{
-		display: none !important;
-	}
-
-	table{
-		width: 100%;
-	}
-
-	.visual{
-		margin-left: -30px;
-		width: 120%;
-	}
 }
 
 dialog{
@@ -477,7 +445,152 @@ dialog #CANCEL:active{
 	color: white;
 }
 
-#statusVisual{
+.post #statusVisual{
 	text-align: center;
 	font-size: 32px;
+}
+
+
+
+
+/* NEW POST FRAGMENT */
+.newPost{
+	position: fixed;
+    float: right;
+    width: 80.17%;
+    background-color: white;
+    height: 100%;
+    overflow-y: scroll;
+    right: 0;
+    background-color: #fff;
+}
+
+.newPost header{
+    margin: 0px;
+    padding: 24px;
+    background-color: #eee;
+    font-size: 48px;
+}
+
+.newPost header p{
+	margin: 0;
+    padding: 0;
+    display: -webkit-inline-box;
+}
+
+.netPost header .fa-bars{
+	float: left;
+    margin: 30px;
+    margin-left: 30px !important;
+}
+
+.newPost main{
+	background-color: #eee;
+	margin: 40px;
+	height: 100%;
+	border-radius: 24px;
+	padding: 42px;
+	font-size: 42px;
+}
+
+.newPost main p{
+	padding: 18px;
+	margin: 0px;
+}
+
+.newPost main input[type="text"], .newPost main textarea{
+	background-color: rgba(255,255,255,0);
+	border: 1px solid black;
+	outline: none;
+	border-bottom: 1px solid black;
+	font-size: 32px;
+	padding: 14px;
+	width: 100%;
+	margin-bottom: 20px;
+	border-radius: 10px;
+}
+
+.newPost main textarea{
+	height: 390px;
+	padding: 14px;
+	font-size: 20px;
+	border-radius: 0px 0px 10px 10px;
+}
+
+.newPost main .tools{
+	border: 1px solid black;
+	height: 32px;
+	border-radius: 10px 10px 0px 0px;
+	padding-left: 8px;
+}
+
+.newPost main .tools ul{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	display: table-row;
+	margin-left: 8px;
+}
+
+.newPost main .tools ul li{
+	display: -webkit-inline-box;
+}
+
+.newPost main .tools ul i{
+	font-size: 18px;
+	padding: 7px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: 0px;
+	transition: background-color 1s;
+}
+
+.newPost main .tools ul i:hover{
+	background-color: #e0e0e0;
+}
+
+.newPost main .tools ul i:active{
+	background-color: #bdbdbd;
+}
+
+
+
+
+
+
+/* SCREEN RESPONSIVE */
+
+@media only screen and (max-width: 1400px) {
+	.post .body main .dati .addPost{
+		margin-left: 1% !important;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.post .body main .dati .addPost{
+		margin-left: 8% !important;
+		min-width: 43%;
+	}
+
+	.post .body{
+		width: 100%;
+		left: 0;
+	}
+
+	.post .body main .dati .shared, .post .body main .dati .visite{
+		display: none;
+	}
+
+	.post .panel{
+		display: none !important;
+	}
+
+	.post table{
+		width: 100%;
+	}
+
+	.post .visual{
+		margin-left: -30px;
+		width: 120%;
+	}
 }

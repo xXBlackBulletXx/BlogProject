@@ -12,70 +12,96 @@
 		<link rel="stylesheet" type="text/css" href="css/gestionale.css">
 	</head>
 	<body>
-		<div class="panel">
-			<center>
-				<header>
-					<p id="title">Emmedimakoto</p>
-					<div class="utente">
-						<i class="fa fa-user fa-1x" aria-hidden="true"></i>
-						<p id="usr">Caricamento nome</p>
-						<p>Modifica il tuo profilo ></p>
-					</div>
+		<div class="post">
+			<div class="panel">
+				<center>
+					<header>
+						<p id="title">Emmedimakoto</p>
+						<div class="utente">
+							<i class="fa fa-user fa-1x" aria-hidden="true"></i>
+							<p id="usr">Caricamento nome</p>
+							<p>Modifica il tuo profilo ></p>
+						</div>
+						
+					</header>
 					
+					<main>
+						<ul>
+							<li id="Post"><a href="#"><i class="fa fa-file-o " aria-hidden="true"></i>Post</a></li>
+							<li id="Notifiche"><a href="#"><i class="fa fa-bell-o " aria-hidden="true"></i>Notifiche<div class="badge">0</div></a></li>
+						</ul>
+					</main>
+
+					<div class="footer">
+						<ul>
+							<li><i class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i></li>
+							<li><i class="fa fa-cog fa-2x" aria-hidden="true"></i></li>
+						</ul>
+					</div>
+				</center>
+			</div>
+			
+			<div class="body" disabled>
+				<header>
+					<i class="fa fa-bars"></i>
+					<p>General</p>
 				</header>
 				
 				<main>
-					<ul>
-						<li id="Post"><a href="#"><i class="fa fa-file-o " aria-hidden="true"></i>Post</a></li>
-						<li id="Notifiche"><a href="#"><i class="fa fa-bell-o " aria-hidden="true"></i>Notifiche<div class="badge">0</div></a></li>
-					</ul>
+					<div class="dati">
+						<div class="addPost">
+							<i class="fa fa-plus" aria-hidden="true"></i>
+							<p>Aggiungi post</p>
+						</div>
+						<div class="shared">
+							<i class="fa fa-retweet" aria-hidden="true"></i>
+							<p>12000</p>
+						</div>
+						<div class="visite">
+							<i class="fa fa-eye" aria-hidden="true"></i>
+							<p>32000</p>
+						</div>
+					</div>
+					<div class="visual">
+						<table id="visualTable">
+							<thead>
+								<tr>
+									<td>ID</td>
+									<td>Data</td>
+									<td>Titolo</td>
+									<td>Azioni</td>
+								</tr>
+							</thead>
+							<tbody id="data">
+							</tbody>
+						</table>
+						<p id="statusVisual">Caricando i dati...</p>
+					</div>
 				</main>
 
-				<div class="footer">
+				<footer>
+					
+				</footer>
+			</div>
+		</div>
+
+		<div class="newPost">
+			<header>
+				<i class="fa fa-bars"></i>
+				<p>New Post</p>
+			</header>
+
+			<main>
+				<p>Titolo</p>
+				<input type="text" id="TitoloTxt" maxlength="100">
+				<p>Descrizione</p>
+				<div class="tools">
 					<ul>
-						<li><i class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i></li>
-						<li><i class="fa fa-cog fa-2x" aria-hidden="true"></i></li>
+						<li><i class="fa fa-bold" id="btnBold"></i></li>
+						<li><i class="fa fa-italic" id="btnItalic"></i></li>
 					</ul>
 				</div>
-			</center>
-		</div>
-		
-		<div class="body">
-			<header>
-					<i class="fa fa-bars"></i>
-					<p>General</p>
-			</header>
-			
-			<main>
-				<div class="dati">
-					<div class="addPost">
-						<i class="fa fa-plus" aria-hidden="true"></i>
-						<p>Aggiungi post</p>
-					</div>
-					<div class="shared">
-						<i class="fa fa-retweet" aria-hidden="true"></i>
-						<p>12000</p>
-					</div>
-					<div class="visite">
-						<i class="fa fa-eye" aria-hidden="true"></i>
-						<p>32000</p>
-					</div>
-				</div>
-				<div class="visual">
-					<table id="visualTable">
-						<thead>
-							<tr>
-								<td>ID</td>
-								<td>Data</td>
-								<td>Titolo</td>
-								<td>Azioni</td>
-							</tr>
-						</thead>
-						<tbody id="data">
-						</tbody>
-					</table>
-					<p id="statusVisual">Caricando i dati...</p>
-				</div>
+				<textarea id="descrizioneTxt"></textarea>
 			</main>
 
 			<footer>
@@ -86,7 +112,7 @@
 		<dialog id="dialogElimin">
 			<p>Vuoi cancellare questo post?</p>
 			<button id="OK">CONFERMA</button>
-			<button id="CANCEL">CANCELLA</button>
+			<button id="CANCEL">CANCELLA</button>s
 		</dialog>
 
 		<dialog id="dialogOK">
