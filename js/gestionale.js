@@ -34,7 +34,21 @@ $(document).ready(function(){
 				if ($action.indexOf("delete")>=0){
 					$("#dialogElimin").fadeIn("1000", "linear").show();
 				}else if($action.indexOf("modify")>=0){
-
+					sessionStorage.setItem("ItemModify", $id);
+					$(".post .body").fadeOut("1000","linear").hide();
+					$("#TitoloTxt").val($("#titolo_"+$id).html());
+					$.ajax({
+						method: "POST",
+						url: "visualSingle.php",
+						data: {ID: $id}
+					})
+					.done(function(data){
+						$data = JSON.parse(data);
+						$("#descrizioneTxt").val($data[0]["TESTO"]);
+						$("#DataPubblicazione").html("Data: " + $data[0]["DATACREAZIONE"]);
+						$("#Categoria").val($data[0]["CATEGORY"]);
+					})
+					$(".newPost").fadeIn("1000", "linear").show();
 				}
 			});
 		});
@@ -75,6 +89,11 @@ $(document).ready(function(){
 		});
 
 		$(".addPost").click(function(){
+			sessionStorage.setItem("ItemModify", null);
+			$("#TitoloTxt").val("");
+			$("#descrizioneTxt").val("");
+			$("#Categoria").val("null");
+			$("#DataPubblicazione").html("Data: " + $d.getDate() + "-" + ($d.getMonth()+1) + "-" + $d.getFullYear());
 			$(".newPost").fadeIn("1000", "linear").show();
 			$(".post .body").fadeOut("100", "linear").hide();
 		});
@@ -99,43 +118,70 @@ $(document).ready(function(){
 
 			if ($action.indexOf("btnBold")==0) {
 				$("#descrizioneTxt").val($firstText + "<bold></bold>"  + $secondText);
-				$("#descrizioneTxt").setCursorPosition($cursor, 7);
+				$("#descrizioneTxt").setCursorPosition($cursor, 6);
 			}else if ($action.indexOf("btnItalic")==0) {
 				$("#descrizioneTxt").val($firstText + "<text class='italicTxt'></text>"  + $secondText);
-				$("#descrizioneTxt").setCursorPosition($cursor, 24);
+				$("#descrizioneTxt").setCursorPosition($cursor, 23);
 			}
 		});
 
 		$("#Pubblica").click(function(){
-			$.ajax({
-				method: "POST",
-				url: "aggiungi.php",
-				data: { Titolo: $("#TitoloTxt").val(), Descrizione: $("#descrizioneTxt").val(), Categoria: $("#Categoria").val(), Data: $d.getDate() + "-" + ($d.getMonth()+1) + "-" + $d.getFullYear()}
-			})
-			.done(function(data){
-				if($jsonParse){
-					$("#dialogOK").fadeIn("1000", "linear").show();
-					setTimeout(function(){
-						$("#dialogOK").fadeOut("1000", "linear");
-						$("#dialogElimin").fadeOut("100", "linear");
+			if (sessionStorage.getItem("ItemModify")>=0) {
+				$.ajax({
+					method: "POST",
+					url: "aggiorna.php",
+					data: { Id: sessionStorage.getItem("ItemModify"), Titolo: $("#TitoloTxt").val(), Descrizione: $("#descrizioneTxt").val(), Categoria: $("#Categoria").val(), Data: $d.getDate() + "-" + ($d.getMonth()+1) + "-" + $d.getFullYear()}
+				})
+				.done(function(data){
+					if($jsonParse){
+						$("#dialogOK").fadeIn("1000", "linear").show();
 						setTimeout(function(){
-							$(".newPost").fadeOut("1000","linear").hide();
-							$(".post .body").fadeIn("100","linear").show();
-							location.reload();
-						}, 500);
-						
-					}, 1500);
-				}else{
-					$("dialogError").fadeIn("1000", "linear").show();
-					setTimeout(function(){
-						$("#dialogError").fadeOut("1000", "linear");
-						$("#dialogElimin").fadeOut("1000", "linear");
-					}, 3000);
-				}
-			})
-			.fail(function(jqXHR, textStatus){
-				
-			});
+							$("#dialogOK").fadeOut("1000", "linear");
+							setTimeout(function(){
+								$(".newPost").fadeOut("1000","linear").hide();
+								$(".post .body").fadeIn("100","linear").show();
+								location.reload();
+							}, 500);
+							
+						}, 1500);
+					}else{
+						$("dialogError").fadeIn("1000", "linear").show();
+						setTimeout(function(){
+							$("#dialogError").fadeOut("1000", "linear");
+							$("#dialogElimin").fadeOut("1000", "linear");
+						}, 3000);
+					}
+				});
+			}else{
+				$.ajax({
+					method: "POST",
+					url: "aggiungi.php",
+					data: { Titolo: $("#TitoloTxt").val(), Descrizione: $("#descrizioneTxt").val(), Categoria: $("#Categoria").val(), Data: $d.getDate() + "-" + ($d.getMonth()+1) + "-" + $d.getFullYear()}
+				})
+				.done(function(data){
+					if($jsonParse){
+						$("#dialogOK").fadeIn("1000", "linear").show();
+						setTimeout(function(){
+							$("#dialogOK").fadeOut("1000", "linear");
+							setTimeout(function(){
+								$(".newPost").fadeOut("1000","linear").hide();
+								$(".post .body").fadeIn("100","linear").show();
+								location.reload();
+							}, 500);
+							
+						}, 1500);
+					}else{
+						$("dialogError").fadeIn("1000", "linear").show();
+						setTimeout(function(){
+							$("#dialogError").fadeOut("1000", "linear");
+							$("#dialogElimin").fadeOut("1000", "linear");
+						}, 3000);
+					}
+				})
+				.fail(function(jqXHR, textStatus){
+					
+				});
+			}
 		});
 
 		(function($, undefined) { 
