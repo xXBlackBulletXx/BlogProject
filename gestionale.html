@@ -102,25 +102,32 @@
 					</ul>
 				</div>
 				<textarea id="descrizioneTxt"></textarea>
+				<select id="Categoria">
+					<option value="null" selected disabled>Categoria:</option>
+					<option value="Articoli">Articoli</option>
+					<option value="Video">Video</option>
+					<option value="Musica">Musica</option>
+				</select>
+				<text id="DataPubblicazione">Data: </text>
+				<input type="button" name="Cancel" value="ANNULLA" id="Cancel">
+				<input type="button" name="Pubblica" value="PUBBLICA" id="Pubblica">
 			</main>
-
-			<footer>
-				
-			</footer>
 		</div>
 
-		<dialog id="dialogElimin">
-			<p>Vuoi cancellare questo post?</p>
-			<button id="OK">CONFERMA</button>
-			<button id="CANCEL">CANCELLA</button>s
-		</dialog>
+		<center>
+			<div class="dialog" id="dialogElimin">
+				<p>Vuoi cancellare questo post?</p>
+				<button id="OK">CONFERMA</button>
+				<button id="CANCEL">CANCELLA</button>
+			</div>
 
-		<dialog id="dialogOK">
-			<p>Azione svolta con successo.</p>
-		</dialog>
+			<div class="dialog" id="dialogOK">
+				<p>Azione svolta con successo.</p>
+			</div>
 
-		<dialog id="dialogError">
-			<p>Ops, si e' verificato un'errore durante l'azione! Riprovare.</p>
-		</dialog>
+			<div class="dialog" id="dialogError">
+				<p>Ops, si e' verificato un'errore durante l'azione! Riprovare.</p>
+			</div>
+		</center>
 	</body>
 </html>
