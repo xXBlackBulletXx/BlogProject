@@ -4,7 +4,7 @@
 
 	$check = true;
 
-	$mysqli = new mysqli("localhost", "root", "", "blog");
+	$mysqli = new mysqli("localhost", "root", "", "my_taboogame");
 
 	$query = "DELETE FROM post WHERE ID='".$id."'";
 

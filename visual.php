@@ -1,7 +1,7 @@
 <?php
 	error_reporting(E_ERROR | E_PARSE);
 
-	$mysqli = new mysqli("localhost", "root", "", "blog");
+	$mysqli = new mysqli("localhost", "root", "", "my_taboogame");
 
 	$query = "SELECT * FROM post LIMIT 100";
 

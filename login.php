@@ -5,7 +5,7 @@
 
 	$pass = false;
 
-	$mysqli = new mysqli("localhost", "root", "", "blog");
+	$mysqli = new mysqli("localhost", "root", "", "my_taboogame");
 
 	$query = "SELECT * FROM utenti";
 

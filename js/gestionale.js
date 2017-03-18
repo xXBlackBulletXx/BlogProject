@@ -47,6 +47,8 @@ $(document).ready(function(){
 						$("#descrizioneTxt").val($data[0]["TESTO"]);
 						$("#DataPubblicazione").html("Data: " + $data[0]["DATACREAZIONE"]);
 						$("#Categoria").val($data[0]["CATEGORY"]);
+						$("#URLImg").val($data[0]["IMMAGINE"]);
+						$("#Hashtag").val($data[0]["TITOLOANTEPRIMA"])
 					})
 					$(".newPost").fadeIn("1000", "linear").show();
 				}
@@ -130,7 +132,7 @@ $(document).ready(function(){
 				$.ajax({
 					method: "POST",
 					url: "aggiorna.php",
-					data: { Id: sessionStorage.getItem("ItemModify"), Titolo: $("#TitoloTxt").val(), Descrizione: $("#descrizioneTxt").val(), Categoria: $("#Categoria").val(), Data: $d.getDate() + "-" + ($d.getMonth()+1) + "-" + $d.getFullYear()}
+					data: { Id: sessionStorage.getItem("ItemModify"), Titolo: $("#TitoloTxt").val(), Descrizione: $("#descrizioneTxt").val(), Categoria: $("#Categoria").val(), Data: $d.getDate() + "-" + ($d.getMonth()+1) + "-" + $d.getFullYear(), IMG: $("#URLImg").val(), Hashtag: $("#Hashtag").val()}
 				})
 				.done(function(data){
 					if($jsonParse){
@@ -156,7 +158,7 @@ $(document).ready(function(){
 				$.ajax({
 					method: "POST",
 					url: "aggiungi.php",
-					data: { Titolo: $("#TitoloTxt").val(), Descrizione: $("#descrizioneTxt").val(), Categoria: $("#Categoria").val(), Data: $d.getDate() + "-" + ($d.getMonth()+1) + "-" + $d.getFullYear()}
+					data: { Titolo: $("#TitoloTxt").val(), Descrizione: $("#descrizioneTxt").val(), Categoria: $("#Categoria").val(), Data: $d.getDate() + "-" + ($d.getMonth()+1) + "-" + $d.getFullYear(), IMG: $("#URLImg").val(), Hashtag: $("#Hashtag").val()}
 				})
 				.done(function(data){
 					if($jsonParse){

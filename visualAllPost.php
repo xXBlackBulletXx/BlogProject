@@ -1,16 +1,18 @@
 <?php
 	error_reporting(E_ERROR | E_PARSE);
-	$ID = $_POST["ID"];
+	$id = $_POST["id"];
+
+	$check = true;
 
 	$mysqli = new mysqli("localhost", "root", "", "my_taboogame");
 
-	$query = "SELECT * FROM post WHERE ID='".$ID."'";
+	$query = "SELECT * FROM post LIMIT 30";
 
 	$result = $mysqli->query($query);
 
 	$array = array();
 
-	$i=0;
+	$i = 0;
 
 	while ($obj = mysqli_fetch_assoc($result)) { 
 		$array[$i] = $obj;

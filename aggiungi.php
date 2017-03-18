@@ -4,12 +4,14 @@
 	$Descrizione = $_POST["Descrizione"];
 	$Categoria = $_POST["Categoria"];
 	$Data = $_POST["Data"];
+	$IMG = $_POST["IMG"];
+	$HASH = $_POST["Hashtag"];
 
 	$check = true;
 
-	$mysqli = new mysqli("localhost", "root", "", "blog");
+	$mysqli = new mysqli("localhost", "root", "", "my_taboogame");
 
-	$query = "INSERT INTO `post`(`ID`, `TITOLO`, `TESTO`, `DATACREAZIONE`, `CATEGORY`, `IMMAGINE`) VALUES (NULL, '".$Titolo."', '".$Descrizione."', '".$Data."', '".$Categoria."', '')";
+	$query = "INSERT INTO `post`(`ID`, `TITOLO`, `TESTO`, `DATACREAZIONE`, `CATEGORY`, `IMMAGINE`, `TITOLOANTEPRIMA`) VALUES (NULL, '".$Titolo."', '".$Descrizione."', '".$Data."', '".$Categoria."', '".$IMG."', '".$HASH."')";
 
 	$result = $mysqli->query($query);
 

@@ -4,10 +4,12 @@
 	$titolo = $_POST["Titolo"];
 	$descrizione = $_POST["Descrizione"];
 	$categoria = $_POST["Categoria"];
+	$URL = $_POST["IMG"];
+	$HASH = $_POST["Hashtag"];
 
-	$mysqli = new mysqli("localhost", "root", "", "blog");
+	$mysqli = new mysqli("localhost", "root", "", "my_taboogame");
 
-	$query = "UPDATE post SET TITOLO='".$titolo."', TESTO='".$descrizione."', CATEGORY='".$categoria."' WHERE ID=".$id." ";
+	$query = "UPDATE post SET TITOLO='".$titolo."', TESTO='".$descrizione."', CATEGORY='".$categoria."', IMMAGINE='".$URL."', TITOLOANTEPRIMA='".$HASH."' WHERE ID=".$id." ";
 
 	$result = $mysqli->query($query);
 

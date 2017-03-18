@@ -4,6 +4,12 @@
   font-weight: bold;
 }
 
+@font-face {
+  font-family: PostFont;
+  src: url(fonts/Postit-Penscript.otf);
+  font-weight: bold;
+}
+
 body{
 	font-family: myFirstFont;
 	margin: 0px;
@@ -82,7 +88,6 @@ footer{
 	background-color: #424242;
 	height: auto;
 	width: 100%;
-	position: absolute;
 	right: 0;
 	bottom: 0;
 	left: 0;
@@ -167,4 +172,50 @@ footer .channels{
 footer .channels p{
 	margin: 0px;
 	padding: 0px;
+}
+
+main{
+	margin: 64px;
+	text-align: center;
+}
+
+main .listPost{
+	list-style-type: none;
+	display: inline-flex;
+}
+
+main .listPost li{
+	margin-left: 24px;
+	margin-right: 38px;
+	margin-bottom: 28px;
+}
+
+main .listPost li .Post{
+	height: auto;
+	width: 270px;
+	background-color: white;
+	padding: 24px;
+	box-shadow: 0px 0px 12px 0px black;
+	transition: transform 0.5s;
+}
+
+main .listPost li .Post .PostImage{
+	height: 245px;
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-origin: content-box;
+}
+
+main .listPost li .Post .Title{
+	margin: 24px 0px 0px 0px;
+	font-size: 36px;
+	font-family: PostFont;
+	text-align: left !important;
+}
+
+main .listPost li .Post:hover{
+	-ms-transform: rotate(5deg) scale(1.2); /* IE 9 */
+    -webkit-transform: rotate(5deg) scale(1.2);
+	transform: rotate(5deg) scale(1.2);
 }
